@@ -1,0 +1,25 @@
+TRAINING_TRIALS: 2
+TRAINING_LEVEL: 3
+START_LEVEL: 5
+MAX_REVS: 3
+MAX_TRIALS: 20
+MIN_LEVEL: 3
+MAX_LEVEL: 6
+
+# time in secunds
+CONST_TIME: 1
+LEVEL_TIME: 3
+JITTER_TIME: 1
+
+# visual parameters
+TEXT_SIZE: 32
+VIZ_OFFSET: 50
+
+# clock
+## show clock n second before trial end
+SHOW_CLOCK: 3
+CLOCK_POS: [600, 400]
+CLOCK_SIZE: 50
+
+# distractor on/off
+DISTRACTORS: False

@@ -1,0 +1,88 @@
+2.4451 	INFO 	Screen res set as: 1920x1080
+2.4461 	INFO 	Loaded monitor calibration from ['2018_09_18 09:28']
+2.9738 	EXP 	Created window1 = Window(allowGUI=True, allowStencil=False, args=UNKNOWN, autoLog=True, bitsMode=UNKNOWN, blendMode='avg', color='Gainsboro', colorSpace='named', fullscr=UNKNOWN, gamma=None, kwargs=UNKNOWN, lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x7f640003eef0>, multiSample=False, name='window1', numSamples=2, pos=None, screen=0, size=array([1920, 1080]), stereo=False, units='pix', useFBO=False, useRetina=False, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pygame')
+2.9738 	INFO 	Detected framerate: 30 frames per sec.
+2.9739 	INFO 	Mouse: using default window
+3.0089 	INFO 	using sysFont Arial
+3.0128 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='black', colorSpace='named', contrast=1.0, depth=0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=32, italic=False, name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([   0., -300.]), rgb=array([0., 0., 0.]), text=str(...), units='pix', win=Window(...), wrapWidth=1920)
+3.0137 	INFO 	using sysFont Arial
+3.0147 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='black', colorSpace='named', contrast=1.0, depth=0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=32, italic=False, name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=array([0., 0., 0.]), text='Wstęp', units='pix', win=Window(...), wrapWidth=1920)
+4.0057 	INFO 	using sysFont 
+4.0069 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='black', colorSpace='named', contrast=1.0, depth=0, flipHoriz=False, flipVert=False, font='', fontFiles=[], height=32, italic=False, name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([-74., -37.]), rgb=array([0., 0., 0.]), text='RI', units='pix', win=Window(...), wrapWidth=500)
+4.0075 	INFO 	using sysFont 
+4.0084 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='black', colorSpace='named', contrast=1.0, depth=0, flipHoriz=False, flipVert=False, font='', fontFiles=[], height=32, italic=False, name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([  0., -37.]), rgb=array([0., 0., 0.]), text='SH', units='pix', win=Window(...), wrapWidth=500)
+4.0089 	INFO 	using sysFont 
+4.0097 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='black', colorSpace='named', contrast=1.0, depth=0, flipHoriz=False, flipVert=False, font='', fontFiles=[], height=32, italic=False, name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([ 74., -37.]), rgb=array([0., 0., 0.]), text='EI', units='pix', win=Window(...), wrapWidth=500)
+4.0103 	INFO 	using sysFont 
+4.0112 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='black', colorSpace='named', contrast=1.0, depth=0, flipHoriz=False, flipVert=False, font='', fontFiles=[], height=32, italic=False, name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([-74.        ,  12.33333333]), rgb=array([0., 0., 0.]), text='QR', units='pix', win=Window(...), wrapWidth=500)
+4.0117 	INFO 	using sysFont 
+4.0126 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='black', colorSpace='named', contrast=1.0, depth=0, flipHoriz=False, flipVert=False, font='', fontFiles=[], height=32, italic=False, name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([ 0.        , 12.33333333]), rgb=array([0., 0., 0.]), text='RC', units='pix', win=Window(...), wrapWidth=500)
+4.0132 	INFO 	using sysFont 
+4.0140 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='black', colorSpace='named', contrast=1.0, depth=0, flipHoriz=False, flipVert=False, font='', fontFiles=[], height=32, italic=False, name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([74.        , 12.33333333]), rgb=array([0., 0., 0.]), text='MR', units='pix', win=Window(...), wrapWidth=500)
+4.0146 	INFO 	using sysFont 
+4.0155 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='black', colorSpace='named', contrast=1.0, depth=0, flipHoriz=False, flipVert=False, font='', fontFiles=[], height=32, italic=False, name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([-74.        ,  61.66666667]), rgb=array([0., 0., 0.]), text='DI', units='pix', win=Window(...), wrapWidth=500)
+4.0160 	INFO 	using sysFont 
+4.0169 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='black', colorSpace='named', contrast=1.0, depth=0, flipHoriz=False, flipVert=False, font='', fontFiles=[], height=32, italic=False, name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([ 0.        , 61.66666667]), rgb=array([0., 0., 0.]), text='HM', units='pix', win=Window(...), wrapWidth=500)
+4.0175 	INFO 	using sysFont 
+4.0185 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='black', colorSpace='named', contrast=1.0, depth=0, flipHoriz=False, flipVert=False, font='', fontFiles=[], height=32, italic=False, name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([74.        , 61.66666667]), rgb=array([0., 0., 0.]), text='HI', units='pix', win=Window(...), wrapWidth=500)
+4.0221 	EXP 	unnamed TextStim: autoDraw = True
+4.0221 	EXP 	unnamed TextStim: autoDraw = True
+4.0221 	EXP 	unnamed TextStim: autoDraw = True
+4.0221 	EXP 	unnamed TextStim: autoDraw = True
+4.0221 	EXP 	unnamed TextStim: autoDraw = True
+4.0221 	EXP 	unnamed TextStim: autoDraw = True
+4.0221 	EXP 	unnamed TextStim: autoDraw = True
+4.0221 	EXP 	unnamed TextStim: autoDraw = True
+4.0221 	EXP 	unnamed TextStim: autoDraw = True
+4.0221 	EXP 	unnamed TextStim: autoDraw = True
+5.2228 	EXP 	unnamed TextStim: autoDraw = False
+5.2228 	EXP 	unnamed TextStim: autoDraw = False
+5.2228 	EXP 	unnamed TextStim: autoDraw = False
+5.2228 	EXP 	unnamed TextStim: autoDraw = False
+5.2228 	EXP 	unnamed TextStim: autoDraw = False
+5.2228 	EXP 	unnamed TextStim: autoDraw = False
+5.2228 	EXP 	unnamed TextStim: autoDraw = False
+5.2228 	EXP 	unnamed TextStim: autoDraw = False
+5.2228 	EXP 	unnamed TextStim: autoDraw = False
+5.2228 	EXP 	unnamed TextStim: autoDraw = False
+6.2270 	INFO 	using sysFont 
+6.2280 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='black', colorSpace='named', contrast=1.0, depth=0, flipHoriz=False, flipVert=False, font='', fontFiles=[], height=32, italic=False, name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([-74., -37.]), rgb=array([0., 0., 0.]), text='DQ', units='pix', win=Window(...), wrapWidth=500)
+6.2285 	INFO 	using sysFont 
+6.2294 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='black', colorSpace='named', contrast=1.0, depth=0, flipHoriz=False, flipVert=False, font='', fontFiles=[], height=32, italic=False, name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([  0., -37.]), rgb=array([0., 0., 0.]), text='RQ', units='pix', win=Window(...), wrapWidth=500)
+6.2299 	INFO 	using sysFont 
+6.2307 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='black', colorSpace='named', contrast=1.0, depth=0, flipHoriz=False, flipVert=False, font='', fontFiles=[], height=32, italic=False, name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([ 74., -37.]), rgb=array([0., 0., 0.]), text='DU', units='pix', win=Window(...), wrapWidth=500)
+6.2312 	INFO 	using sysFont 
+6.2321 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='black', colorSpace='named', contrast=1.0, depth=0, flipHoriz=False, flipVert=False, font='', fontFiles=[], height=32, italic=False, name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([-74.        ,  12.33333333]), rgb=array([0., 0., 0.]), text='XK', units='pix', win=Window(...), wrapWidth=500)
+6.2326 	INFO 	using sysFont 
+6.2335 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='black', colorSpace='named', contrast=1.0, depth=0, flipHoriz=False, flipVert=False, font='', fontFiles=[], height=32, italic=False, name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([ 0.        , 12.33333333]), rgb=array([0., 0., 0.]), text='NQ', units='pix', win=Window(...), wrapWidth=500)
+6.2340 	INFO 	using sysFont 
+6.2348 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='black', colorSpace='named', contrast=1.0, depth=0, flipHoriz=False, flipVert=False, font='', fontFiles=[], height=32, italic=False, name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([74.        , 12.33333333]), rgb=array([0., 0., 0.]), text='HK', units='pix', win=Window(...), wrapWidth=500)
+6.2353 	INFO 	using sysFont 
+6.2361 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='black', colorSpace='named', contrast=1.0, depth=0, flipHoriz=False, flipVert=False, font='', fontFiles=[], height=32, italic=False, name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([-74.        ,  61.66666667]), rgb=array([0., 0., 0.]), text='LQ', units='pix', win=Window(...), wrapWidth=500)
+6.2367 	INFO 	using sysFont 
+6.2375 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='black', colorSpace='named', contrast=1.0, depth=0, flipHoriz=False, flipVert=False, font='', fontFiles=[], height=32, italic=False, name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([ 0.        , 61.66666667]), rgb=array([0., 0., 0.]), text='OY', units='pix', win=Window(...), wrapWidth=500)
+6.2380 	INFO 	using sysFont 
+6.2389 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='black', colorSpace='named', contrast=1.0, depth=0, flipHoriz=False, flipVert=False, font='', fontFiles=[], height=32, italic=False, name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([74.        , 61.66666667]), rgb=array([0., 0., 0.]), text='CU', units='pix', win=Window(...), wrapWidth=500)
+6.2428 	EXP 	unnamed TextStim: autoDraw = True
+6.2428 	EXP 	unnamed TextStim: autoDraw = True
+6.2428 	EXP 	unnamed TextStim: autoDraw = True
+6.2428 	EXP 	unnamed TextStim: autoDraw = True
+6.2428 	EXP 	unnamed TextStim: autoDraw = True
+6.2428 	EXP 	unnamed TextStim: autoDraw = True
+6.2428 	EXP 	unnamed TextStim: autoDraw = True
+6.2428 	EXP 	unnamed TextStim: autoDraw = True
+6.2428 	EXP 	unnamed TextStim: autoDraw = True
+6.2428 	EXP 	unnamed TextStim: autoDraw = True
+6.6891 	EXP 	unnamed TextStim: autoDraw = False
+6.6891 	EXP 	unnamed TextStim: autoDraw = False
+6.6891 	EXP 	unnamed TextStim: autoDraw = False
+6.6891 	EXP 	unnamed TextStim: autoDraw = False
+6.6891 	EXP 	unnamed TextStim: autoDraw = False
+6.6891 	EXP 	unnamed TextStim: autoDraw = False
+6.6891 	EXP 	unnamed TextStim: autoDraw = False
+6.6891 	EXP 	unnamed TextStim: autoDraw = False
+6.6891 	EXP 	unnamed TextStim: autoDraw = False
+6.6891 	EXP 	unnamed TextStim: autoDraw = False
+7.6914 	INFO 	using sysFont Arial
+7.6928 	EXP 	Created unnamed TextStim = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='black', colorSpace='named', contrast=1.0, depth=0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=32, italic=False, name='unnamed TextStim', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=array([0., 0., 0.]), text='Po treningu', units='pix', win=Window(...), wrapWidth=1920)
+9.6726 	CRITICAL 	Experiment finished by user! f7 pressed.
