@@ -36,7 +36,7 @@ def save_beh():
 
 
 def run_trial(n):
-    m = Matrix(n=n)
+    m = Matrix(n=n, possible_answers=ALL_LINES)
     m.fill_matrix(distractors=config['DISTRACTORS'])
     matrix = TrialMatrix(matrix=m, position=0, window=window, viz_offset=config['VIZ_OFFSET'],
                          text_size=config['TEXT_SIZE'])
@@ -76,7 +76,7 @@ window = visual.Window(SCREEN_RES, fullscr=True, monitor='testMonitor', units='p
 FRAMES_PER_SEC = get_frame_rate(window)
 mouse = event.Mouse(visible=False)
 
-help_text = ALL_LINES[0] + " " * 15 + ALL_LINES[1] + " " * 30 + ALL_LINES[2] + " " * 15 + "no"
+help_text = ALL_LINES[0] + " " * 15 + ALL_LINES[1] + " " * 15 + ALL_LINES[2]  # + " " * 15 + "no"
 help_line = visual.TextStim(win=window, antialias=True, font=u'Arial',
                             text=help_text, height=config['TEXT_SIZE'],
                             wrapWidth=SCREEN_RES[0], color=u'black',
