@@ -1,14 +1,14 @@
 TRAINING_TRIALS: [{level: 3, n_trails: 2}, {level: 4, n_trails: 2}]
-START_LEVEL: 5
-MAX_REVS: 3
-MAX_TRIALS: 20
+START_LEVEL: 3
+MAX_REVS: 6
+MAX_TRIALS: 70
 MIN_LEVEL: 3
 MAX_LEVEL: 6
 
-# time in secunds
-CONST_TIME: 1
-LEVEL_TIME: 3
-JITTER_TIME: 1
+# time in seconds
+CONST_TIME: 0
+LEVEL_TIME: 4
+JITTER_TIME: 0.5
 
 # visual parameters
 TEXT_SIZE: 32
@@ -16,9 +16,9 @@ VIZ_OFFSET: 50
 
 # clock
 ## show clock n second before trial end
-SHOW_CLOCK: 3
-CLOCK_POS: [600, 400]
-CLOCK_SIZE: 50
+SHOW_CLOCK: 4
+CLOCK_POS: [400, 400]
+CLOCK_SIZE: 70
 
 # distractor on/off
 DISTRACTORS: False
