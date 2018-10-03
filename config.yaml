@@ -1,5 +1,4 @@
-TRAINING_TRIALS: 2
-TRAINING_LEVEL: 3
+TRAINING_TRIALS: [{level: 3, n_trails: 2}, {level: 4, n_trails: 2}]
 START_LEVEL: 5
 MAX_REVS: 3
 MAX_TRIALS: 20

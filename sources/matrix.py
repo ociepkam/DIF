@@ -31,6 +31,7 @@ ln 0                  ln 1
 
 class Matrix:
     def __init__(self, n=3, possible_answers=ALL_LINES + ['no']):
+        assert n > 2, "n have to be grater than 2"
         self.n = n
         self.possible_answers = possible_answers
         self.answer_line_type = random.choice(possible_answers)
