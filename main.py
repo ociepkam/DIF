@@ -76,7 +76,7 @@ window = visual.Window(SCREEN_RES, fullscr=True, monitor='testMonitor', units='p
 FRAMES_PER_SEC = get_frame_rate(window)
 mouse = event.Mouse(visible=False)
 
-help_text = ALL_LINES[0] + " " * 15 + ALL_LINES[1] + " " * 15 + ALL_LINES[2]  # + " " * 15 + "no"
+help_text = "wiersz" + " " * 15 + "kolumna" + " " * 15 + "przekątna"  # + " " * 15 + "no"
 help_line = visual.TextStim(win=window, antialias=True, font=u'Arial',
                             text=help_text, height=config['TEXT_SIZE'],
                             wrapWidth=SCREEN_RES[0], color=u'black',
