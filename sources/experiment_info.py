@@ -12,9 +12,9 @@ def experiment_info():
 
     my_dlg = gui.Dlg(title="DIF")
     my_dlg.addText('Subject info:')
-    my_dlg.addField('ID:')
-    my_dlg.addField('Age:')
-    my_dlg.addField('Sex:', choices=['MALE', "FEMALE"])
+    my_dlg.addField('Kod:')
+    my_dlg.addField('Wiek:')
+    my_dlg.addField('Plec:', choices=['M', "K"])
 
     my_dlg.show()
     if not my_dlg.OK:

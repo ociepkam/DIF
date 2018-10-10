@@ -80,7 +80,7 @@ help_text = "wiersz" + " " * 15 + "kolumna" + " " * 15 + "przekątna"  # + " " *
 help_line = visual.TextStim(win=window, antialias=True, font=u'Arial',
                             text=help_text, height=config['TEXT_SIZE'],
                             wrapWidth=SCREEN_RES[0], color=u'black',
-                            pos=(0, -300))
+                            pos=(0, -175))
 clock_image = visual.ImageStim(win=window, image=join('images', 'clock.png'), interpolate=True,
                                size=config['CLOCK_SIZE'], pos=config['CLOCK_POS'])
 
@@ -118,7 +118,7 @@ for i, soa in enumerate(experiment, i):
     else:
         rev_count_val = '-'
 
-    RESULTS.append([config['TRAINING_TRIALS'] + i, 1, acc, rt, stim_time, n, reversal, rev_count_val, answer_line_type])
+    RESULTS.append([i, 1, acc, rt, stim_time, n, reversal, rev_count_val, answer_line_type]) #config['TRAINING_TRIALS'] +
     experiment.set_corr(acc)
 
 
