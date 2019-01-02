@@ -52,8 +52,8 @@ class NUpNDown(AbstractAdaptive):
         # check if it's time to stop alg.
         if self.revs_count <= self.max_revs:
             return self.curr_val
-        else:
-            raise StopIteration()
+        # else:
+        #     raise StopIteration()
 
     def set_corr(self, corr):
         """
