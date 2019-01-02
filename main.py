@@ -137,7 +137,7 @@ for i, soa in enumerate(experiment, i):
     RESULTS.append([i, 1, acc, rt, stim_time, n, reversal, rev_count_val, answer_line_type]) #config['TRAINING_TRIALS'] +
     experiment.set_corr(acc)
 
-    if rev_count_val == conf['MAX_REVS']:
+    if rev_count_val == config['MAX_REVS']:
         break
 
 show_info(window, join('.', 'messages', "end.txt"), text_size=config['TEXT_SIZE'], screen_width=SCREEN_RES[0])
