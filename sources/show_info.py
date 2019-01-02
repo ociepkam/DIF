@@ -44,8 +44,8 @@ def show_info(win, file_name, text_size, screen_width, insert=''):
                                 alignHoriz='center', alignVert='center')
     hello_msg.draw()
     win.flip()
-    key = event.waitKeys(keyList=['f7', 'return', 'space'])
-    if key == ['f7']:
+    key = event.waitKeys(keyList=['q', 'return', 'space'])
+    if key == ['q']:
         logging.critical('Experiment finished by user! {} pressed.'.format(key[0]))
         exit(0)
     win.flip()
@@ -55,8 +55,8 @@ def show_image(win, file_name, size):
     image = visual.ImageStim(win=win, image=os.path.join('images', file_name), interpolate=True, size=size)
     image.draw()
     win.flip()
-    key = event.waitKeys(keyList=['f7', 'return', 'space'])
-    if key == ['f7']:
+    key = event.waitKeys(keyList=['q', 'return', 'space'])
+    if key == ['q']:
         logging.critical('Experiment finished by user! {} pressed.'.format(key[0]))
         exit(0)
     win.flip()

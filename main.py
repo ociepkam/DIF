@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import atexit
 from psychopy import visual, event, core, logging
 from os.path import join
@@ -27,6 +28,7 @@ RAND = str(random.randint(100, 999))
 logging.LogFile(join('.', 'results', 'logging', NAME + '_' + RAND + '.log'), level=logging.INFO)
 
 
+
 @atexit.register
 def save_beh():
     logging.flush()
@@ -41,7 +43,7 @@ def run_trial(n):
     matrix = TrialMatrix(matrix=m, position=0, window=window, viz_offset=config['VIZ_OFFSET'],
                          text_size=config['TEXT_SIZE'])
     stim_time = config['CONST_TIME'] + m.n * config['LEVEL_TIME']
-    acc = 0
+    acc = None
     rt = -1
     window.callOnFlip(response_clock.reset)
     event.clearEvents()
@@ -57,7 +59,7 @@ def run_trial(n):
         if keys:
             rt = response_clock.getTime()
             resp = KEYS_TO_TRIAL_TYPE[keys[0]]
-            acc = 1 if resp == m.answer_line_type else -1
+            acc = 1 if resp == m.answer_line_type else 0
             break
 
     help_line.setAutoDraw(False)
@@ -71,8 +73,7 @@ def run_trial(n):
 config = load_config()
 
 SCREEN_RES = get_screen_res()
-window = visual.Window(SCREEN_RES, fullscr=True, monitor='testMonitor', units='pix',
-                       screen=0, color='Gainsboro', winType='pygame')
+window = visual.Window(SCREEN_RES, fullscr=True, monitor='testMonitor', units='pix', color='Gainsboro')
 FRAMES_PER_SEC = get_frame_rate(window)
 mouse = event.Mouse(visible=False)
 
@@ -90,6 +91,10 @@ response_clock = core.Clock()
 # show_info(window, join('.', 'messages', "instruction1.txt"),text_size=config['TEXT_SIZE'], screen_width=SCREEN_RES[0])
 show_image(window, 'instruction.png', SCREEN_RES)
 
+pos_feedb = visual.TextStim(window, text=u'Poprawna odpowied\u017A', color='black', height=40)
+neg_feedb = visual.TextStim(window, text=u'Niepoprawna odpowied\u017A', color='black', height=40)
+no_feedb = visual.TextStim(window, text=u'Nie udzieli\u0142e\u015B odpowiedzi', color='black', height=40)
+
 i = 1
 for elem in config['TRAINING_TRIALS']:
     print(elem)
@@ -97,6 +102,17 @@ for elem in config['TRAINING_TRIALS']:
         acc, rt, stim_time, n, answer_line_type = run_trial(n=elem['level'])
         RESULTS.append([i, 0, acc, rt, stim_time, n, 0, 0, answer_line_type])
         i += 1
+    ### FEEDBACK
+        if acc == 1:
+            feedb_msg = pos_feedb
+        elif acc == 0:
+            feedb_msg = neg_feedb
+        else:
+            feedb_msg = no_feedb
+        for _ in range(100):
+            feedb_msg.draw()
+            check_exit()
+            window.flip()
 
 # EXPERIMENT
 show_info(window, join('.', 'messages', "instruction2.txt"), text_size=config['TEXT_SIZE'], screen_width=SCREEN_RES[0])

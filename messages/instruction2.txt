@@ -1,1 +1,5 @@
-Po treningu
+Pamiêtaj, Twoim zadaniem jest znaleŸæ rz¹d, kolumnê b¹dŸ przek¹tn¹, w której wszystkie litery s¹ ró¿ne.
+
+Teraz rozpocznie siê w³aœciwa czêœæ zadania, potrwa ona kilka minut. Powodzenia!
+
+Przyciœnij Spacjê by rozpocz¹æ
