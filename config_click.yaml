@@ -1,4 +1,4 @@
-TRAINING_TRIALS: [{level: 4, n_trails: 1}, {level: 5, n_trails: 1}, {level: 6, n_trails: 4}]
+TRAINING_TRIALS: [{level: 3, n_trails: 2}, {level: 5, n_trails: 1}]
 EXPERIMENT_TRIALS: [{level: 5, n_trails: 2}, {level: 6, n_trails: 2}]
 
 
@@ -28,5 +28,6 @@ answer_color: green
 lineWidth: 3
 
 
-feedback_time: 1
+feedback_time: 1 # for -1 participant have to presses space
+min_training_acc: 0.5
 wait_after_answer: 0.2

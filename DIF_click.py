@@ -123,7 +123,13 @@ def run_trial(n, feedback=False):
         feedb_msg.setAutoDraw(True)
 
         window.flip()
-        time.sleep(config["feedback_time"])
+        if config["feedback_time"] > 0:
+            time.sleep(config["feedback_time"])
+        elif config["feedback_time"] == -1:
+            key = event.waitKeys(keyList=['f7', 'space'])
+            if key == ['f7']:
+                logging.critical('Experiment finished by user! {} pressed.'.format(key[0]))
+                exit(0)
         feedb_msg.setAutoDraw(False)
         answer_frame.setAutoDraw(False)
 
@@ -152,14 +158,21 @@ neg_feedb = visual.TextStim(window, text=u'Niepoprawna odpowied\u017A', color='b
 no_feedb = visual.TextStim(window, text=u'Nie udzieli\u0142e\u015B odpowiedzi', color='black', height=40, pos=(0, -200))
 
 # TRAINING
-show_image(window, 'instruction.png', SCREEN_RES)
-
-i = 1
-for elem in config['TRAINING_TRIALS']:
-    for trail in range(elem['n_trails']):
-        acc, rt, stim_time, n, answer_line_type = run_trial(n=elem['level'], feedback=True)
-        RESULTS.append([i, 0, acc, rt, stim_time, n, 0, 0, answer_line_type])
-        i += 1
+mean_acc = 0
+while mean_acc < config["min_training_acc"]:
+    mean_acc = 0
+    show_image(window, 'instruction.png', SCREEN_RES)
+    i = 1
+    for elem in config['TRAINING_TRIALS']:
+        for trail in range(elem['n_trails']):
+            acc, rt, stim_time, n, answer_line_type = run_trial(n=elem['level'], feedback=True)
+            RESULTS.append([i, 0, acc, rt, stim_time, n, 0, 0, answer_line_type])
+            i += 1
+            mean_acc += acc
+    if i > 1:
+        mean_acc /= (i-1)
+    else:
+        break
 
 # EXPERIMENT
 show_info(window, join('.', 'messages', "instruction2.txt"), text_size=config['TEXT_SIZE'], screen_width=SCREEN_RES[0])

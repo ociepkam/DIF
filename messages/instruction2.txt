@@ -1,5 +1,5 @@
-Pamiêtaj, Twoim zadaniem jest znaleŸæ rz¹d, kolumnê b¹dŸ przek¹tn¹, w której wszystkie litery s¹ ró¿ne.
+ï»¿PamiÄ™taj, Twoim zadaniem jest znaleÅºÄ‡ rzÄ…d, kolumnÄ™ bÄ…dÅº przekÄ…tnÄ…, w ktÃ³rej wszystkie litery sÄ… rÃ³Å¼ne.
 
-Teraz rozpocznie siê w³aœciwa czêœæ zadania, potrwa ona kilka minut. Powodzenia!
+Teraz rozpocznie siÄ™ wÅ‚aÅ›ciwa czÄ™Å›Ä‡ zadania, potrwa ona kilka minut. Powodzenia!
 
-Przyciœnij Spacjê by rozpocz¹æ
+PrzyciÅ›nij SpacjÄ™ by rozpoczÄ…Ä‡
