@@ -1,5 +1,5 @@
-﻿Pamiętaj, Twoim zadaniem jest znaleźć rząd, kolumnę bądź przekątną, w której wszystkie litery są różne.
+﻿Pamiętaj, Twoim zadaniem jest znaleźć rząd lub kolumnę, w której wszystkie litery są różne.
 
-Teraz rozpocznie się właściwa część zadania, potrwa ona kilka minut. Powodzenia!
+Teraz rozpocznie się właściwa część zadania, potrwa ona kilka minut.
 
 Przyciśnij Spację by rozpocząć

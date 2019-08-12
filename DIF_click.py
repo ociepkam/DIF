@@ -160,8 +160,8 @@ no_feedb = visual.TextStim(window, text=u'Nie udzieli\u0142e\u015B odpowiedzi', 
 # TRAINING
 mean_acc = 0
 while mean_acc < config["min_training_acc"]:
-    mean_acc = 0
     show_image(window, 'instruction.png', SCREEN_RES)
+    mean_acc = 0
     i = 1
     for elem in config['TRAINING_TRIALS']:
         for trail in range(elem['n_trails']):
@@ -173,6 +173,9 @@ while mean_acc < config["min_training_acc"]:
         mean_acc /= (i-1)
     else:
         break
+    if mean_acc < config["min_training_acc"]:
+        show_info(window, join('.', 'messages', "training_info.txt"),
+                  text_size=config['TEXT_SIZE'],screen_width=SCREEN_RES[0])
 
 # EXPERIMENT
 show_info(window, join('.', 'messages', "instruction2.txt"), text_size=config['TEXT_SIZE'], screen_width=SCREEN_RES[0])
