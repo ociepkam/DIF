@@ -1,5 +1,9 @@
-﻿Pamiętaj, Twoim zadaniem jest znaleźć rząd lub kolumnę, w której wszystkie litery są różne.
+﻿Pamiętaj, Twoim zadaniem jest znaleźć rząd lub kolumnę,
+w której wszystkie drugie figury są różne.
 
-Teraz rozpocznie się właściwa część zadania, potrwa ona kilka minut.
+Teraz rozpocznie się właściwa część zadania,
+do rozwiązania masz 40 przykładów.
+
+Zadanie wymaga wysiłku więc skoncentruj się!
 
 Przyciśnij Spację by rozpocząć

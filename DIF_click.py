@@ -7,6 +7,7 @@ import os
 import csv
 import random
 
+
 from sources.experiment_info import experiment_info
 from sources.load_data import load_config
 from sources.screen import get_screen_res, get_frame_rate
@@ -14,6 +15,8 @@ from sources.show_info import show_info, show_image
 from sources.matrix import Matrix
 from sources.draw_matrix import TrialMatrix
 from sources.check_exit import check_exit
+
+
 
 SCREEN_RES = get_screen_res()
 ALL_LINES = ['row', 'column']
@@ -24,7 +27,7 @@ part_id, part_sex, part_age, date = experiment_info()
 NAME = "{}_{}_{}".format(part_id, part_sex, part_age)
 
 RESULTS = list()
-RESULTS.append(['NR', 'EXPERIMENTAL', 'ACC', 'RT', 'TIME', 'LEVEL', 'REVERSAL', 'REVERSAL_COUNT', 'TRIAL_TYPE'])
+RESULTS.append(['NR', 'EXPERIMENTAL', 'ACC', 'RT', 'TIME', 'LEVEL', 'TRIAL_TYPE'])
 RAND = str(random.randint(100, 999))
 
 logging.LogFile(join('.', 'results', 'logging', NAME + '_' + RAND + '.log'), level=logging.INFO)
@@ -66,6 +69,8 @@ def run_trial(n, feedback=False):
     m.fill_matrix(distractors=config['DISTRACTORS'])
     matrix = TrialMatrix(matrix=m, position=0, window=window, viz_offset=config['VIZ_OFFSET'],
                          text_size=config['TEXT_SIZE'])
+    idx_info = visual.TextStim(window, color='black', pos=(500, 400), height=50,
+                               text=i)
     stim_time = config['CONST_TIME'] + m.n * config['LEVEL_TIME']
     acc = None
     rt = -1
@@ -74,6 +79,7 @@ def run_trial(n, feedback=False):
 
     # draw trial
     matrix.set_auto_draw(True)
+    idx_info.setAutoDraw(True)
     frames = create_items_frames(matrix.stimulus_matrix)
 
     for frame in frames:
@@ -121,6 +127,7 @@ def run_trial(n, feedback=False):
         else:
             feedb_msg = no_feedb
         feedb_msg.setAutoDraw(True)
+        press_space_msg.setAutoDraw(True)
 
         window.flip()
         if config["feedback_time"] > 0:
@@ -132,11 +139,13 @@ def run_trial(n, feedback=False):
                 exit(0)
         feedb_msg.setAutoDraw(False)
         answer_frame.setAutoDraw(False)
+        press_space_msg.setAutoDraw(False)
 
     # cleaning
     for frame in frames:
         frame.setAutoDraw(False)
     matrix.set_auto_draw(False)
+    idx_info.setAutoDraw(False)
     window.flip()
 
     time.sleep(config['JITTER_TIME'])
@@ -157,17 +166,24 @@ pos_feedb = visual.TextStim(window, text=u'Poprawna odpowied\u017A', color='blac
 neg_feedb = visual.TextStim(window, text=u'Niepoprawna odpowied\u017A', color='black', height=40, pos=(0, -200))
 no_feedb = visual.TextStim(window, text=u'Nie udzieli\u0142e\u015B odpowiedzi', color='black', height=40, pos=(0, -200))
 
+press_space_msg = visual.TextStim(window, text=u'Przyci\u015Bnij spacje', color='black', height=40, pos=(0, -300))
+
 # TRAINING
 mean_acc = 0
 while mean_acc < config["min_training_acc"]:
-    show_image(window, 'instruction.png', SCREEN_RES)
+    show_image(window, 'instruction1.png', SCREEN_RES)
+    show_image(window, 'instruction2.png', SCREEN_RES)
+    show_image(window, 'instruction3.png', SCREEN_RES)
+    show_image(window, 'instruction4.png', SCREEN_RES)
     mean_acc = 0
     i = 1
     for elem in config['TRAINING_TRIALS']:
         for trail in range(elem['n_trails']):
             acc, rt, stim_time, n, answer_line_type = run_trial(n=elem['level'], feedback=True)
-            RESULTS.append([i, 0, acc, rt, stim_time, n, 0, 0, answer_line_type])
+            RESULTS.append([i, 0, acc, rt, stim_time, n, answer_line_type])
             i += 1
+            if not acc:
+                acc = 0
             mean_acc += acc
     if i > 1:
         mean_acc /= (i-1)
@@ -184,7 +200,7 @@ i = 1
 for elem in config['EXPERIMENT_TRIALS']:
     for trail in range(elem['n_trails']):
         acc, rt, stim_time, n, answer_line_type = run_trial(n=elem['level'])
-        RESULTS.append([i, 0, acc, rt, stim_time, n, 0, 0, answer_line_type])
+        RESULTS.append([i, 1, acc, rt, stim_time, n, answer_line_type])
         i += 1
 
 show_info(window, join('.', 'messages', "end.txt"), text_size=config['TEXT_SIZE'], screen_width=SCREEN_RES[0])
