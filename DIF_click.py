@@ -27,7 +27,7 @@ part_id, part_sex, part_age, date = experiment_info()
 NAME = "{}_{}_{}".format(part_id, part_sex, part_age)
 
 RESULTS = list()
-RESULTS.append(['NR', 'EXPERIMENTAL', 'ACC', 'RT', 'TIME', 'LEVEL', 'TRIAL_TYPE'])
+RESULTS.append(['NR', 'EXPERIMENT', 'ACC', 'RT', 'TIME', 'LEVEL', 'TRIAL_TYPE'])
 RAND = str(random.randint(100, 999))
 
 logging.LogFile(join('.', 'results', 'logging', NAME + '_' + RAND + '.log'), level=logging.INFO)
@@ -40,6 +40,13 @@ def save_beh():
         beh_writer = csv.writer(csvfile)
         beh_writer.writerows(RESULTS)
 
+def replace_polish(text):
+    letters = {"Ĺ»": "Ż", "Ã": "Ó", "Ă“": "Ł", "Ä†": "Ć", "Ä": "Ę", "Ĺš": "Ś", "Ä„": "Ą", "Ĺą": "Ź", "Å": "Ń",
+               "ĹĽ": "ż", "Ã³": "ó", "Ĺ‚": "ł", "Ä‡": "ć", "Ä™": "ę", "Ĺ›": "ś", "Ä…": "ą", "Ĺş": "ź", "Ĺ„": "ń"}
+
+    for k, v in letters.items():
+        text = text.replace(k, v)
+    return text
 
 def create_items_frames(stimulus_matrix):
     frames = []
@@ -127,16 +134,18 @@ def run_trial(n, feedback=False):
         else:
             feedb_msg = no_feedb
         feedb_msg.setAutoDraw(True)
-        press_space_msg.setAutoDraw(True)
-
         window.flip()
+
         if config["feedback_time"] > 0:
             time.sleep(config["feedback_time"])
         elif config["feedback_time"] == -1:
+            press_space_msg.setAutoDraw(True)
+            window.flip()
             key = event.waitKeys(keyList=['f7', 'space'])
             if key == ['f7']:
                 logging.critical('Experiment finished by user! {} pressed.'.format(key[0]))
                 exit(0)
+
         feedb_msg.setAutoDraw(False)
         answer_frame.setAutoDraw(False)
         press_space_msg.setAutoDraw(False)
@@ -162,25 +171,29 @@ mouse = event.Mouse(visible=True)
 
 clock_image = visual.ImageStim(win=window, image=join('images', 'clock.png'), interpolate=True,
                                size=config['CLOCK_SIZE'], pos=config['CLOCK_POS'])
-pos_feedb = visual.TextStim(window, text=u'Poprawna odpowied\u017A', color='black', height=40, pos=(0, -200))
-neg_feedb = visual.TextStim(window, text=u'Niepoprawna odpowied\u017A', color='black', height=40, pos=(0, -200))
-no_feedb = visual.TextStim(window, text=u'Nie udzieli\u0142e\u015B odpowiedzi', color='black', height=40, pos=(0, -200))
+pos_feedb = visual.TextStim(window, text=replace_polish(config["pos_feedb"]), color='black', height=25, pos=(0, -200))
+neg_feedb = visual.TextStim(window, text=replace_polish(config["neg_feedb"]), color='black', height=25, pos=(0, -200))
+no_feedb = visual.TextStim(window, text=replace_polish(config["no_feedb"]), color='black', height=25, pos=(0, -200))
 
-press_space_msg = visual.TextStim(window, text=u'Przyci\u015Bnij spacje', color='black', height=40, pos=(0, -300))
+press_space_msg = visual.TextStim(window, text=u'Przyci\u015Bnij spacje', color='black', height=25, pos=(0, -300))
+
+
 
 # TRAINING
 mean_acc = 0
+training_nr = 0
 while mean_acc < config["min_training_acc"]:
     show_image(window, 'instruction1.png', SCREEN_RES)
     show_image(window, 'instruction2.png', SCREEN_RES)
     show_image(window, 'instruction3.png', SCREEN_RES)
     show_image(window, 'instruction4.png', SCREEN_RES)
     mean_acc = 0
+    training_nr += 1
     i = 1
     for elem in config['TRAINING_TRIALS']:
         for trail in range(elem['n_trails']):
             acc, rt, stim_time, n, answer_line_type = run_trial(n=elem['level'], feedback=True)
-            RESULTS.append([i, 0, acc, rt, stim_time, n, answer_line_type])
+            RESULTS.append([i, "train", acc, rt, stim_time, n, answer_line_type])
             i += 1
             if not acc:
                 acc = 0
@@ -189,6 +202,10 @@ while mean_acc < config["min_training_acc"]:
         mean_acc /= (i-1)
     else:
         break
+    if mean_acc < config["min_training_acc"] and training_nr == 5:
+        show_info(window, join('.', 'messages', "end.txt"), text_size=config['TEXT_SIZE'], screen_width=SCREEN_RES[0])
+        logging.critical('Training not completed')
+        exit(1)
     if mean_acc < config["min_training_acc"]:
         show_info(window, join('.', 'messages', "training_info.txt"),
                   text_size=config['TEXT_SIZE'],screen_width=SCREEN_RES[0])
@@ -200,7 +217,7 @@ i = 1
 for elem in config['EXPERIMENT_TRIALS']:
     for trail in range(elem['n_trails']):
         acc, rt, stim_time, n, answer_line_type = run_trial(n=elem['level'])
-        RESULTS.append([i, 1, acc, rt, stim_time, n, answer_line_type])
+        RESULTS.append([i, "exp", acc, rt, stim_time, n, answer_line_type])
         i += 1
 
 show_info(window, join('.', 'messages', "end.txt"), text_size=config['TEXT_SIZE'], screen_width=SCREEN_RES[0])
